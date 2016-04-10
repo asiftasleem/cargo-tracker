@@ -149,6 +149,23 @@ sink example for demonstrating the vast amount of APIs and features in Java EE,
 we do use a very representative set. You'll find that you'll learn a fair amount
 by simply digging into the code to see how things are implemented.
 
+WildFly config changes:
+* Added eclipselink-2.5.1.jar to modules\system\layers\base\org\eclipse\persistence\main and modified module.xml:
+        <resource-root path="eclipselink-2.5.1.jar"/>
+		<module name="javax.ws.rs.api"/>
+
+Code changes:
+* Adding maven profiles for glassfish (default) and wildfly
+* Added wildfly web.xml with resteasy servlet
+* Added default constructors for REST service classes to support resteasy
+* Added some logging
+
+
+TODO
+* standardize JDBC JNDI name
+* put datasource in web.xml
+* maven web.xml filtering and token replacement to add resteasy servlet???
+
 Known Issues
 ============
 There are no known issues while running on GlassFish 4.1. For previous versions
