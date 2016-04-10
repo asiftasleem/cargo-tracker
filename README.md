@@ -149,7 +149,10 @@ sink example for demonstrating the vast amount of APIs and features in Java EE,
 we do use a very representative set. You'll find that you'll learn a fair amount
 by simply digging into the code to see how things are implemented.
 
-WildFly config changes:
+WildFly Changes
+===============
+
+Config changes:
 * Added eclipselink-2.5.1.jar to modules\system\layers\base\org\eclipse\persistence\main and modified module.xml:
         <resource-root path="eclipselink-2.5.1.jar"/>
 		<module name="javax.ws.rs.api"/>
@@ -162,6 +165,7 @@ Code changes:
 
 
 TODO
+====
 * standardize JDBC JNDI name
 * put datasource in web.xml
 * maven web.xml filtering and token replacement to add resteasy servlet???
