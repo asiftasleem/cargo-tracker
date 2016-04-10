@@ -163,12 +163,26 @@ Code changes:
 * Added default constructors for REST service classes to support resteasy
 * Added some logging
 
-
 TODO
-====
 * standardize JDBC JNDI name
 * put datasource in web.xml
 * maven web.xml filtering and token replacement to add resteasy servlet???
+
+
+Run Cargo Tracker on WebLogic 12.2.1
+===========================================
+
+Prereqs:
+You should have WebLogic 12.2.1 installed. The WebLogic Maven plugin should be installed too (see http://docs.oracle.com/middleware/1221/wls/WLPRG/maven.htm#WLPRG845)
+
+Steps
+* Adjust if needed the port of the 'External Routing Service' endpoint in src/main/webapp/WEB-INF/ejb-jar.xml (WLS uses by defaut 7001)
+* Adjust if needed the WebLogic credentials in the pom.xml.
+* Deploy Cargo Tracker using the weblogic profile : mvn -Pweblogic clean package com.oracle.weblogic:weblogic-maven-plugin:deploy
+* Go to http://localhost:7001/cargo-tracker
+
+TODO
+* Test CT using the WLS Multi-tenant Profile
 
 Known Issues
 ============
